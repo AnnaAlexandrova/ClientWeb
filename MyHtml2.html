@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My HTML</title>
+</head>
+<body>
+<h1>Заявка на тур</h1>
+<form action="/MyHtml2.html" method="post">
+    <label for="clientName">Ваше имя</label>
+    <input placeholder="Ваше имя" required type="text" id="clientName" name="clientName"/>
+
+    <p><label>Путешествуете с детьми?</label>
+        <label><input checked="checked" type="radio" name="withChildren" value="no">Нет</label>
+        <label> <input type="radio" name="withChildren" value="yes"> Да</label></p>
+
+    <p><label for="clientAge">Стоимость тура</label>
+        <select required id="clientAge" name="clientAge">
+            <option value=""></option>
+            <option value="20000 - 25000">20000 - 25000</option>
+            <option value="25001 - 30000">25001 - 30000</option>
+            <option value="30001 - 40000">30001 - 40000</option>
+            <option value="40000 <">Больше 40000</option>
+        </select>
+    </p>
+
+    <p><label for="routes">Какие направления для путешествий Вы предпочитаете</label></p>
+    <p><select id="routes" multiple name="routes">
+        <option value="Russia">Россия</option>
+        <option value="Asia">Азия</option>
+        <option value="Europe">Европа</option>
+        <option value="North America">Северная Америка</option>
+        <option value="South America">Южная Америка</option>
+        <option value="Africa">Африка</option>
+        <option value="Australia">Австралия и Океания</option>
+    </select>
+    </p>
+
+    <label for="clientReview">Введите Ваши пожелания</label>
+    <br/>
+    <textarea rows="10" cols="45" placeholder="Ваши пожелания" id="clientReview" name="clientReview"></textarea>
+
+    <p><label for="PhoneNumber">Ваш номер телефона</label>
+        <input placeholder="+7 XXX-XX-XX" required type="tel" id="PhoneNumber" name="PhoneNumber"/></p>
+
+    <p><label for="Email">Ваш Email</label>
+        <input placeholder="Ваш Email" required type="Email" id="Email" name="Email"/></p>
+
+    <p><label><input type="checkbox"> Подписаться на рассылку уведомлений о горящих турах</label></p>
+
+    <p>
+        <button type="submit">Отправить</button>
+    </p>
+</form>
+<a href="./MyHtml1.html">На главную страницу</a>
+</body>
+</html>
