@@ -10,7 +10,7 @@
     font-size: 110%;
 }
 
-.head-line tr th {
+.head-line th {
     border: 1px solid #e4e4e4;
     padding: 16px 10px;
     background-color: #3498db;
@@ -18,7 +18,7 @@
     text-align: left;
 }
 
-.body-line tr td {
+.body-line td {
     border: 1px solid #e4e4e4;
     padding: 16px 10px;
     color: #574f43;
