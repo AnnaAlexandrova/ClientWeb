@@ -7,17 +7,17 @@ body {
 
 .header {
     font-weight: normal;
-    width: 55%;
+    max-width: 750px;
 }
 
-.div {
+.text {
     text-indent: 15px;
-    width: 55%;
+    max-width: 750px;
     text-align: justify;
     line-height: 150%;
 }
 
-.span {
+.item {
     font-weight: bold;
     color: #398eb3;
 }
