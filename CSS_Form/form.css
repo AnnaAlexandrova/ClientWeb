@@ -1,0 +1,62 @@
+.header {
+    text-indent: 20px;
+    font-weight: normal;
+    max-width: 750px;
+    font-size: 1.73em;
+    color: #676565;
+    margin-bottom: -5px;
+    font-family: Tahoma, serif;
+}
+
+.client-info {
+    background-color: #FEEED6;
+    max-width: 700px;
+    padding: 10px 18px 10px 18px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-family: Tahoma, serif;
+}
+
+.client-info p {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.client-info label {
+    color: #6D656D;
+    font-weight: bold;
+}
+
+.client-info input, textarea {
+    padding: 10px;
+    width: 680px;
+    margin-bottom: 10px;
+    color: rgba(85, 85, 85, 0.1);
+    font-weight: 500;
+    font-size: inherit;
+    font-stretch: semi-expanded;
+    background-color: #fff;
+    border: none;
+    outline: none;
+}
+
+.client-info textarea {
+    height: 90px;
+    font-family: sans-serif;
+}
+
+.client-info span {
+    color: rgba(85, 85, 85, 0.7);
+}
+
+.client-info button {
+    border: none;
+    outline: none;
+    margin: 5px 20px 5px 555px;
+    height: 30px;
+    width: 151px;
+    font-size: inherit;
+    font-weight: bold;
+    background-color: #378DB2;
+    color: #fff;
+}
