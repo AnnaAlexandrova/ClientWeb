@@ -1,17 +1,17 @@
-const list = [1, 2, 3, 4, 5, 6, 7, 8];
+var list = [1, 2, 3, 4, 5, 6, 7, 8];
 
 list.sort(function (n1, n2) {
     return n2 - n1;
 });
 console.log(list);
 
-const beginningList = list.slice(0, 5);
+var beginningList = list.slice(0, 5);
 console.log(beginningList);
 
-const endList = list.slice(list.length - 5);
+var endList = list.slice(list.length - 5);
 console.log(endList);
 
-const evenArray = list.filter(function (e) {
+var evenArray = list.filter(function (e) {
     return e % 2 === 0;
 });
 
@@ -19,18 +19,18 @@ console.log(evenArray.reduce(function (sum, currentValue) {
     return sum + currentValue;
 }, 0));
 
-const newList = [];
+var newList = [];
 
-for (var j = 0; j < 100; j++) {
-    newList.push(j + 1)
+for (var i = 1; i <= 100; i++) {
+    newList.push(i)
 }
 console.log(newList);
 
-const evenList = newList.filter(function (e) {
+var evenList = newList.filter(function (e) {
     return e % 2 === 0;
-}, 0);
+});
 
-const newEvenList = evenList.map(function (e) {
+var newEvenList = evenList.map(function (e) {
     return Math.pow(e, 2);
 });
 console.log(newEvenList);
