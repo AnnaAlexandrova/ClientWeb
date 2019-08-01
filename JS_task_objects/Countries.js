@@ -49,18 +49,13 @@ var countries = [
 ];
 
 function getCountriesWithMaxCitiesCount(countries) {
-    var maxCitiesCount = 0;
-    countries.forEach(function (currentCountry) {
-        if (currentCountry.cities.length >= maxCitiesCount) {
-            maxCitiesCount = currentCountry.cities.length;
-        }
-        return maxCitiesCount;
+    var result = countries;
+    result.sort(function (country1, country2) {
+        return country2.cities.length - country1.cities.length;
     });
 
-    return countries.filter(function (country) {
-        return country.cities.length === maxCitiesCount;
-    }).map(function (country) {
-        return country.name;
+    return result.filter(function (country) {
+        return country.cities.length === result[0].cities.length;
     });
 }
 
