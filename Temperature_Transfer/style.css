@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #BAC9D1;
+}
+
+.transfer-block {
+    background: aliceblue;
+    margin: 70px;
+    max-width: 100%;
+    font-family: "Lucida Bright", serif;
+    text-align: center;
+}
+
+.transfer-block div {
+    display: inline-block;
+    margin: 20px;
+    font-weight: bold;
+    color: blue;
+}
+
+.header {
+    padding-top: 20px;
+    color: blueviolet;
+}
+
+.button-style {
+    background: coral;
+    color: darkblue;
+    height: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button-style:hover {
+    background-color: #007FFF;
+}

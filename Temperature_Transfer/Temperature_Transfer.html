@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature-Transfer</title>
+    <link rel="stylesheet" type="text/css" href="normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<div class="transfer-block">
+    <h1 class="header">Перевод температуры</h1>
+    <div>
+        <p><label for="celsius">Цельсий</label></p>
+        <p><input type="text" placeholder="00.00" id="celsius"/></p>
+    </div>
+
+    <div>
+        <button type="button" id="transfer" class="button-style">Перевести</button>
+    </div>
+
+    <div><p><label for="kelvin">Кельвин</label></p>
+        <p><input type="text" disabled placeholder="273.15" id="kelvin"/></p></div>
+
+    <div><p><label for="fahrenheit">Фаренгейт</label></p>
+        <p><input type="text" disabled placeholder="32" id="fahrenheit"/></p></div>
+</div>
+<script src="temperature.js"></script>
+</body>
+</html>
