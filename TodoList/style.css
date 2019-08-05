@@ -1,0 +1,25 @@
+.validation-message {
+    color: red;
+    font-size: larger;
+}
+
+.todo-style {
+    font-family: "Lucida Bright", serif;
+    margin: 10px 50px;
+    max-width: 900px;
+    background: #FEEED6;
+    height: 500px;
+    padding: 20px;
+    color: #398eb3;
+}
+
+.todo-style button:hover {
+    background: #007FFF;
+    cursor: pointer;
+}
+
+.header {
+    color: #D60A09;
+    font-family: "Lucida Bright", serif;
+    margin: 20px 70px;
+}
