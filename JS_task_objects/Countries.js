@@ -50,7 +50,7 @@ var countries = [
 
 function getCountriesWithMaxCitiesCount(countries) {
     var maxCitiesCount = countries.reduce(function (citiesCount, currentCountry) {
-        return citiesCount > currentCountry.cities.length ? citiesCount : currentCountry.cities.length;
+        return Math.max(citiesCount, currentCountry.cities.length);
     }, 0);
 
     return countries.filter(function (country) {
