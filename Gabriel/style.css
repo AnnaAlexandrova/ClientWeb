@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+}
+
+.booking-form {
+    max-width: 1200px;
+    margin: 75px 55px;
+    border: #BAC9D1 2px solid;
+    border-radius: 10px;
+}
+
+.booking-system-links {
+    background-color: #FFD308;
+    width: 100%;
+    min-height: 80px;
+    font-family: "Lucida Sans Unicode", serif;
+    font-size: 20px;
+    padding: 15px 0;
+    font-weight: bold;
+    box-shadow: 0 -5px 14px 1px #B7D1E6;
+    border-top-right-radius: 9px;
+    border-top-left-radius: 9px;
+    border-bottom: #E7DFAB 1px solid;
+    display: -webkit-flex;
+    -webkit-justify-content: center;
+    -webkit-align-content: center;
+    -webkit-flex-flow: row wrap;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-flow: row wrap;
+}
+
+.link-block {
+    margin-top: 10px;
+    width: 170px;
+    height: 50%;
+    padding: 10px 10px;
+    border-right: #CEAE1C 1px solid;
+}
+
+.link-block span {
+    font-size: small;
+}
+
+.link-block:last-of-type {
+    border-right: none;
+}
+
+.link-block a:link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #88720C;
+}
+
+.link-block a:visited {
+    color: #D8B40F;
+}
+
+.link-block a:hover {
+    text-decoration: underline;
+    color: #88720C;
+}
+
+.link-block a:active {
+    color: #D60A09;
+}
+
+.current-link {
+    color: #D60A09 !important;
+    text-decoration: underline !important;
+}
+
