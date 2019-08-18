@@ -17,32 +17,40 @@ $(document).ready(function () {
             .html("<span></span><button type='button'>Изменить</button><button type='button'>X</button>")
             .appendTo(todoList);
 
-        li.children().eq(0).text(newTodoText.val());
+        var todoText = li.children().eq(0);
+        var changeButton = li.children().eq(1);
+        var deleteButton = li.children().eq(2);
 
-        li.children().eq(1).click(function () {
-            var prevText = li.children().eq(0).text();
+        todoText.text(newTodoText.val());
+
+        changeButton.click(function () {
+            var prevText = todoText.text();
             li.children().hide();
 
             var temp = $("<div>")
                 .html("<input type='text'><button type='button'>Сохранить</button><button type='button'>Отменить</button>")
                 .appendTo(li);
 
-            temp.children().eq(0).val(prevText);
+            var changedTodoText = temp.children().eq(0);
+            var saveButton = temp.children().eq(1);
+            var cancelButton = temp.children().eq(2);
 
-            temp.children().eq(1).click(function () {
-                var newText = temp.children().eq(0).val();
+            changedTodoText.val(prevText);
+
+            saveButton.click(function () {
+                var newText = changedTodoText.val();
                 temp.remove();
                 li.children().show();
-                li.children().eq(0).text(newText);
+                todoText.text(newText);
             });
 
-            temp.children().eq(2).click(function () {
+            cancelButton.click(function () {
                 temp.remove();
                 li.children().show();
             });
         });
 
-        li.children().eq(2).click(function () {
+        deleteButton.click(function () {
             li.remove();
         });
 
