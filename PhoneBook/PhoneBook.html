@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Phone book</title>
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="container">
+<h1 class="header">Телефонная книга</h1>
+<div class="row align-items-start">
+    <div class="phone-book-style col-11 col-md-8">
+        <table class="table-style" id="phone-book">
+            <thead>
+            <tr>
+                <th>№</th>
+                <th>Фамилия</th>
+                <th>Имя</th>
+                <th>Номер телефона</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div class="phone-book-style col-11 col-md-4">
+        <form action="PhoneBook.html" id="add-contact-form" method="post" class="form-style needs-validation"
+              novalidate>
+            <h2>Добавить контакт</h2>
+
+            <label for="surname">Введите фамилию</label>
+            <input type="text" id="surname" name="surname" placeholder="Фамилия" required class="form-control">
+            <div class="invalid-feedback">Введите фамилию абонента</div>
+
+            <label for="name">Введите имя</label>
+            <input type="text" id="name" name="name" placeholder="Имя" required class="form-control">
+            <div class="invalid-feedback">Введите имя абонента</div>
+
+            <label for="phone-number">Введите номер телефона</label>
+            <input type="tel" id="phone-number" name="phone-number" placeholder="+7-(XXX)-XXX-XX-XX" required
+                   class="form-control">
+            <div class="invalid-feedback">Введите номер телефона в формате XXX-XXX-XX-XX</div>
+
+            <button type="button" id="form-button" class="btn btn-primary">Добавить</button>
+        </form>
+    </div>
+</div>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/jquery-mask-plugin/dist/jquery.mask.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="phone-book.js"></script>
+</body>
+</html>
