@@ -6,7 +6,7 @@ $(document).ready(function () {
     var validationMessage = $(".validation-message");
 
     addTodoButton.click(function () {
-        if (newTodoText.val() === "") {
+        if (newTodoText.val().trim() === "") {
             validationMessage.show();
             return;
         }
@@ -38,7 +38,14 @@ $(document).ready(function () {
             changedTodoText.val(prevText);
 
             saveButton.click(function () {
-                var newText = changedTodoText.val();
+                var newText = changedTodoText.val().trim();
+
+                if (newText === "") {
+                    validationMessage.show();
+                    return;
+                }
+
+                validationMessage.hide();
                 temp.remove();
                 li.children().show();
                 todoText.text(newText);
