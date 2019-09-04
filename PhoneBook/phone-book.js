@@ -1,9 +1,9 @@
 $(document).ready(function () {
     var contactsCount = 0;
     var phoneBook = $("#phone-book");
-    var form = document.querySelector('.needs-validation');
+    var form = $(".needs-validation")[0];
 
-    $("#form-button").click(function (event) {
+    $("#form-button").css({marginTop: "10px"}).click(function (event) {
         $(this).closest('form').find("input").each(function () {
             $(this).val($.trim($(this).val()));
         });
@@ -12,7 +12,7 @@ $(document).ready(function () {
             event.preventDefault();
             event.stopPropagation();
 
-            form.classList.add('was-validated');
+            $(form).addClass("was-validated");
         } else {
             var surname = $("#surname").val();
             var name = $("#name").val();
@@ -31,15 +31,15 @@ $(document).ready(function () {
                     .click(function () {
                         newContact.remove();
 
-                        $("tr:not:first").each(function (i) {
-                            $(this).children().eq(0).text(i);
+                        $("tr:not(tr:first)").each(function (i) {
+                            $(this).children().eq(0).text(i + 1);
                         });
                         contactsCount--;
                     })))
                 .appendTo(phoneBook);
 
             $(this).closest('form').find("input").val("");
-            form.classList.remove('was-validated');
+            $(form).removeClass("was-validated");
         }
     });
 });
