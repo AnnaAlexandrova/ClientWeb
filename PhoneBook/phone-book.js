@@ -3,8 +3,8 @@ $(document).ready(function () {
     var phoneBook = $("#phone-book");
     var form = $(".needs-validation")[0];
 
-    $("#form-button").css({marginTop: "10px"}).click(function (event) {
-        $(this).closest('form').find("input").each(function () {
+    $("#form-button").click(function (event) {
+        $(this).closest("form").find("input").each(function () {
             $(this).val($.trim($(this).val()));
         });
 
@@ -38,7 +38,7 @@ $(document).ready(function () {
                     })))
                 .appendTo(phoneBook);
 
-            $(this).closest('form').find("input").val("");
+            $(this).closest("form").find("input").val("");
             $(form).removeClass("was-validated");
         }
     });
