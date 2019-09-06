@@ -67,7 +67,7 @@ var peopleList = _.chain(people)
 console.log(peopleList);
 
 _.each(people, function (p) {
-    return _.extend(p, {fullName: p.name + " " + p.lastName});
+    p.fullName = p.name + " " + p.lastName;
 });
 console.log(people);
 
