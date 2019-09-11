@@ -1,0 +1,15 @@
+[v-cloak] {
+    display: none;
+}
+
+.invalid {
+    border-color: red;
+}
+
+.error-message {
+    color: red;
+}
+
+.todo-list-style {
+    margin: 10px;
+}
