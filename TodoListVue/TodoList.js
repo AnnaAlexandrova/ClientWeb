@@ -17,6 +17,7 @@ Vue.component("todo-list-item", {
         save: function () {
             this.$emit("change-item", this.item, this.previousTodoText);
             this.needsEdit = false;
+            this.previousTodoText = this.item.text;
         },
         cancel: function () {
             this.$emit("cancel-changing", this.item, this.previousTodoText);
@@ -54,7 +55,7 @@ new Vue({
                 if (item.text.trim() === "") {
                     item.text = previousTodoText;
                 } else {
-                    this.previousTodoText = this.item.text;
+                    this.previousTodoText = item.text;
                 }
             },
 

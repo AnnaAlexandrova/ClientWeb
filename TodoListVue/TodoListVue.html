@@ -8,18 +8,21 @@
 </head>
 <body>
 <div id="app" class="container">
-    <h1>TODO List</h1>
+    <h1 class="header">TODO List</h1>
 
-    <div class="col-11 col-md-8 todo-list-style">
-        <input :class="{invalid: isInvalid}" type="text" v-model="newTodoText"/>
-        <button @click="addTodo" class="btn btn-primary">Добавить заметку</button>
-        <div class="error-message" v-if="isInvalid">Необхлодимо ввести текст заметки!</div>
+    <div class="row align-items-start">
+        <div class="col-11 col-md-8 todo-list-style">
+            <input :class="{invalid: isInvalid}" type="text" v-model="newTodoText"/>
+            <button @click="addTodo" class="btn btn-primary button-style">Добавить заметку</button>
+            <div class="error-message" v-if="isInvalid">Необходимо ввести текст заметки!</div>
+        </div>
     </div>
 
-    <ul>
+    <ul class="row align-items-start">
         <todo-list-item :item="item"
                         v-for="item in items"
                         v-on:change-item="changeItem"
+                        v-on:cancel-changing="cancelChanging"
                         v-on:delete-item="deleteTodo">
         </todo-list-item>
     </ul>
@@ -29,19 +32,20 @@
     <li class="col-11 col-md-8 todo-list-style">
         <span v-if="!needsEdit">
         <span v-text="item.text"></span>
-        <button @click="editItem()" class="btn btn-primary">Изменить</button>
-        <button @click="deleteItem()" class="btn btn-primary">X</button>
+        <button @click="editItem" class="btn btn-primary button-style">Изменить</button>
+        <button @click="deleteItem" class="btn btn-primary">X</button>
          </span>
 
         <span v-else>
             <input type="text" v-model="item.text">
-            <button @click="save" class="btn btn-primary">Сохранить</button>
+            <button @click="save" class="btn btn-primary button-style">Сохранить</button>
             <button @click="cancel" class="btn btn-primary">Отмена</button>
         </span>
     </li>
 </script>
 
 <script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/jquery/dist/jquery.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 <script src="TodoList.js"></script>
 </body>
