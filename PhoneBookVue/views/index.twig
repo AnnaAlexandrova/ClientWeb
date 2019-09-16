@@ -1,0 +1,51 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+    {% verbatim %}
+
+<div id="app">
+    <div class="container">
+        <h1 class="mb-3">Phone Book</h1>
+
+        <form class="form-inline mb-4 needs-validation" novalidate>
+            <input v-model="name" type="text" class="form-control mb-2 mr-sm-2" placeholder="Имя абонента" maxlength="20" required>
+            <div class="invalid-feedback mr-3 error-message">Введите имя абонента</div>
+
+            <input v-model="phone" type="tel" class="form-control mb-2 mr-sm-2" placeholder="Телефон" maxlength="10" required>
+            <div class="invalid-feedback mr-3 error-message">Введите номер телефона</div>
+
+            <button @click="addContact" class="btn btn-primary" type="button">Добавить</button>
+        </form>
+
+        <form class="form-inline mb-4">
+            <label class="mr-2">Поиск</label>
+            <input class="form-control mr-2" v-model="term" type="text">
+            <button @click="search" class="btn btn-primary mr-3" type="button">Фильтр</button>
+            <button @click="cancelSearching" class="btn btn-primary" type="button">Сбросить</button>
+        </form>
+
+         <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>№</th>
+                <th>Имя</th>
+                <th>Телефон</th>
+                <th></th>
+               </tr>
+            </thead>
+            <tbody>
+              <tr v-cloak v-for="(c, index) in contacts">
+                <td>{{ index + 1 }}.</td>
+                <td>{{ c.name }}</td>
+                <td>{{ c.phone }}</td>
+                <td>
+                  <button @click="deleteContact(c)" class="btn btn-danger" type="button">X</button>
+                </td>
+               </tr>
+             </tbody>
+          </table>
+    </div>
+</div>
+
+    {% endverbatim %}
+{% endblock %}
