@@ -17,6 +17,7 @@ new Vue({
             contacts: [],
             name: "",
             phone: "",
+            isInvalid: false,
             term: ""
         };
     },
@@ -25,10 +26,8 @@ new Vue({
     },
     methods: {
         addContact: function () {
-            var form = $(".needs-validation")[0];
-
             if (this.name.trim() === "" || this.phone.trim() === "") {
-                $(form).addClass("was-validated");
+                this.isInvalid = true;
                 return;
             }
 
@@ -37,7 +36,7 @@ new Vue({
                 phone: this.phone
             };
 
-            $(form).removeClass("was-validated");
+            this.isInvalid = false;
 
             var self = this;
 

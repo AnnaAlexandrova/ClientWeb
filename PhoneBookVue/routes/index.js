@@ -1,14 +1,13 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-var contacts = [];
-var id = 1;
+let contacts = [];
+let id = 1;
 
 router.get("/getContacts", function (req, res) {
-    var term = (req.query.term || "").toUpperCase();
+    const term = (req.query.term || "").toUpperCase();
 
-
-    var result = term === ""
+    const result = term === ""
         ? contacts
         : contacts.filter(function (c) {
             return c.name.toUpperCase().indexOf(term) >= 0
@@ -18,27 +17,52 @@ router.get("/getContacts", function (req, res) {
 });
 
 router.post("/addContact", function (req, res) {
-    var contact = req.body;
+    const contact = req.body;
+    const name = contact.name;
+    const phone = contact.phone;
 
-    if (contact === "") {
+    const regExpPhoneSymbols = /^[\d\s()+-]*$/;
+
+    let success = true;
+    let message = "";
+
+    if (contact === "" || contact === null) {
+        success = false;
+        message = "Data is not correct";
+    } else if (name === "" || name === null) {
+        success = false;
+        message = "Name is not correct";
+    } else if (!regExpPhoneSymbols.test(phone)) {
+        success = false;
+        message = "Phone is not correct";
+    }
+
+    contacts.some(function (c) {
+        if (phone === c.phone) {
+            success = false;
+            message = "Contact with this phone number is already exists";
+        }
+    });
+
+    if (!success) {
         res.send({
             success: false,
-            message: "Data is not correct"
+            message: message
         });
-        return;
-    }
-    contacts.push(contact);
-    contact.id = id;
-    id++;
+    } else {
+        contacts.push(contact);
+        contact.id = id;
+        id++;
 
-    res.send({
-        success: true,
-        message: null
-    });
+        res.send({
+            success: true,
+            message: null
+        });
+    }
 });
 
 router.post("/deleteContact", function (req, res) {
-    var id = req.body.id;
+    let id = req.body.id;
 
     contacts = contacts.filter(function (c) {
         return c.id !== id;

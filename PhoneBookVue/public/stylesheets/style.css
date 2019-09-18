@@ -1,7 +1,8 @@
 [v-cloak] {
-  display: none;
+    display: none;
 }
 
-.error-message {
-width: auto;
+.form-style {
+    align-items: start;
 }
+
