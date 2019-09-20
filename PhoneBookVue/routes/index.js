@@ -37,12 +37,14 @@ router.post("/addContact", function (req, res) {
         message = "Phone is not correct";
     }
 
-    contacts.some(function (c) {
-        if (phone === c.phone) {
-            success = false;
-            message = "Contact with this phone number is already exists";
-        }
-    });
+    function isExist(contact) {
+        return phone === contact.phone;
+    }
+
+    if (contacts.some(isExist)) {
+        success = false;
+        message = "Contact with this phone number is already exists";
+    }
 
     if (!success) {
         res.send({
@@ -59,10 +61,11 @@ router.post("/addContact", function (req, res) {
             message: null
         });
     }
-});
+})
+;
 
 router.post("/deleteContact", function (req, res) {
-    let id = req.body.id;
+    const id = req.body.id;
 
     contacts = contacts.filter(function (c) {
         return c.id !== id;
@@ -75,7 +78,7 @@ router.post("/deleteContact", function (req, res) {
 });
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', function (req, res) {
     res.render('index');
 });
 

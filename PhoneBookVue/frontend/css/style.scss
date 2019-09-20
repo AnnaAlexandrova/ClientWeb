@@ -1,0 +1,17 @@
+$start: start;
+$none: none;
+
+[v-cloak] {
+  display: $none;
+}
+
+.form-style {
+  align-items: $start;
+}
+
+@media screen and (max-width: 576px) {
+  .form-style div {
+    width: 100%;
+  }
+}
+
