@@ -18,7 +18,7 @@
             <button @click="addContact" class="btn btn-primary" type="button">Добавить</button>
         </form>
 
-        <form class="form-inline mb-4">
+        <form class="form-inline mb-4 form-style">
             <label class="mr-2">Поиск</label>
             <input class="form-control mr-2 mb-2" v-model="term" type="text">
             <button @click="search" class="btn btn-primary mr-3" type="button">Фильтр</button>
