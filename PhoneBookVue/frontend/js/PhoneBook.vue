@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h1 class="mb-3">Phone Book</h1>
+        <h1 class="mb-3">Phone Book 2</h1>
 
         <form class="form-inline m-0 mb-4 needs-validation form-style row" :class="{ 'was-validated': isInvalid }" novalidate>
             <div class="mr-2 p-0">
